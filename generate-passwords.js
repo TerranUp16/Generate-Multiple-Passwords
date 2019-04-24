@@ -122,7 +122,9 @@ function generateLimitedSpecialPasswords(count, length) {
         chars.push(String.fromCharCode(i))
     }
 
-    displayOutput(createPasswords(count, length, chars))
+    var reqChars = ['!','#','*','-','_']
+
+    displayOutput(createPasswordsWithRequiredChars(count, length, chars, reqChars))
 }
 
 function createPasswords(count, length, characters) {
@@ -130,6 +132,21 @@ function createPasswords(count, length, characters) {
 
     for (var i=0; i<count; i++) {
         passwords.push(createPassword(length, characters))
+    }
+
+    return passwords
+}
+
+function createPasswordsWithRequiredChars(count, length, characters, reqChars) {
+    var passwords = []
+
+    for (var i=0; i<count; i++) {
+        var tempPass
+        do {
+            tempPass = createPassword(length, characters)
+        } while (reqCharNotIn(tempPass, reqChars))
+
+        passwords.push(tempPass)
     }
 
     return passwords
@@ -153,6 +170,16 @@ function createPassword(length, characters) {
     }
 
     return password
+}
+
+function reqCharNotIn(tempPass, reqChars) {
+    for (var i=0;i<reqChars.length;i++) {
+        if (tempPass.includes(reqChars[i])) {
+            return false
+        }
+    }
+
+    return true
 }
 
 function displayOutput(passwords) {
