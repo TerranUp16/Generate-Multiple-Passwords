@@ -1,5 +1,3 @@
-# Generate Multiple Passwords
-
 ## Install
 Clone repository to your local machine.
 
