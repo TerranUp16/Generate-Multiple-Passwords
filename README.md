@@ -1,8 +1,9 @@
 ## Install
-Clone repository to your local machine.
+1. Download https://github.com/TerranUp16/Generate-Multiple-Passwords/raw/master/Generate-Multiple-Passwords.zip
+2. Unzip `Generate-Multiple-Passwords.zip`
 
 ## Use
-Open `generate-multiple-passwords.html` in your favorite web browser.
+Open `generate-multiple-passwords.html` file in your favorite web browser.
 
 Once the page loads, fill out the form, then select `Generate Password(s)`.
 
